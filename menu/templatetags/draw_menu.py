@@ -15,7 +15,7 @@ def draw_menu(context, menu):
 
     try:
         selected_item = items.get(id=context['request'].GET[menu])
-        opened_items = get_opened_items(selected_item)
+        opened_items = get_parent_items(selected_item)
         for parent in super_parents:
             if parent['id'] in opened_items:
                 parent['child_items'] = get_child_items(item_values, parent['id'], opened_items)
@@ -27,7 +27,7 @@ def draw_menu(context, menu):
     return context
 
 
-def get_opened_items(child):
+def get_parent_items(child):
     opened_items_id_list = []
     while child:
         opened_items_id_list.append(child.id)
