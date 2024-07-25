@@ -1,5 +1,6 @@
 from django import template
 from menu.models import Item
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 register = template.Library()
@@ -20,8 +21,7 @@ def draw_menu(context, menu):
             if parent['id'] in opened_items:
                 parent['child_items'] = get_child_items(item_values, parent['id'], opened_items)
         context["items"] = super_parents
-    except:
-        print('gege')
+    except MultiValueDictKeyError:
         context["items"] = super_parents
 
     return context

@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'three_menu.urls'
+ROOT_URLCONF = 'tree_menu.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'three_menu.wsgi.application'
+WSGI_APPLICATION = 'tree_menu.wsgi.application'
 
 
 # Database
